@@ -399,6 +399,107 @@ p{margin:0}
   .ws-m{display:none}
   .links a{padding:6px 9px;font-size:13px}
 }
+
+/* ===== dynamic dashboard ===== */
+.dash{margin-top:40px;background:var(--card);color:var(--ink);border-radius:var(--r-lg) var(--r-lg) 0 0;padding:28px 28px 24px;box-shadow:0 -20px 50px rgba(5,12,24,.25);scroll-margin-top:72px}
+.dash-h{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px}
+.dash-h h2{margin:0;font-size:21px;font-weight:800;line-height:1.5}
+.dash-h p{margin:2px 0 0;color:var(--ink-2);font-size:13.5px}
+.reset{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:0;border-radius:999px;padding:6px 14px;cursor:pointer;white-space:nowrap}
+.filters{display:grid;gap:10px;padding:14px 16px;background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-md)}
+.fg{display:flex;gap:12px;align-items:flex-start}
+.fl{flex:0 0 112px;display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--ink-2);padding-top:5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:13px;line-height:1.6;padding:3px 12px;border-radius:999px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover{border-color:var(--blue)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+@media (prefers-color-scheme:dark){.chip.on{background:var(--blue);border-color:var(--blue);color:#0c1522}}
+.scope{margin:12px 2px 14px;font-size:13px;color:var(--ink-3)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-bottom:16px}
+.kpi{padding:0 20px;border-left:1px solid var(--line)}
+.kpi:first-child{padding-right:0}
+.kpi:last-child{border-left:0;display:flex;align-items:center;gap:12px}
+.kpi.done .tg-n,.kpi.done .tg-l .ic{color:var(--done)}
+.kpi.pct .tg-n,.kpi.pct .tg-l .ic{color:var(--blue)}
+.mini-ring{width:56px;height:56px;flex:0 0 56px;transform:rotate(-90deg) scaleY(-1)}
+.mini-ring circle{fill:none;stroke-width:8;stroke:var(--card-2)}
+.mini-ring #kRing{stroke:var(--blue);stroke-linecap:round;transition:stroke-dasharray .5s ease}
+.m100{grid-template-columns:repeat(100,1fr);gap:2px}
+.m100 .sg{height:26px;border-radius:2px;animation:none;transition:background .3s}
+.sg.left{background:var(--card-2);box-shadow:inset 0 0 0 1px var(--line)}
+.sw.left{background:var(--card-2);box-shadow:inset 0 0 0 1.5px var(--line-2)}
+.charts{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;margin-top:22px}
+.chart{margin:0;border:1px solid var(--line);border-radius:var(--r-md);padding:16px 16px 12px;min-width:0}
+.chart figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;font-weight:800;font-size:15px}
+.chart figcaption > span{display:inline-flex;align-items:center;gap:8px}
+.chart figcaption .ic{color:var(--blue)}
+.sort{font-size:12.5px;font-weight:500;color:var(--ink-3);display:flex;align-items:center;gap:6px}
+.sort select{font:inherit;font-size:12.5px;color:var(--ink);background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:3px 8px}
+.bars{display:grid;gap:4px}
+.bar{display:grid;grid-template-columns:150px minmax(0,1fr) 112px;gap:12px;align-items:center;width:100%;font:inherit;text-align:right;background:none;border:0;border-radius:8px;padding:5px 6px;cursor:pointer;color:var(--ink)}
+.bar:hover{background:var(--card-2)}
+.bar.on{background:var(--blue-soft)}
+.bar.dim{opacity:.42}
+.b-n{font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.b-track{height:18px;display:block}
+.b-tot{display:block;height:100%;background:var(--card-2);box-shadow:inset 0 0 0 1px var(--line);border-radius:5px;overflow:hidden;min-width:3px}
+.b-done{display:block;height:100%;background:var(--done);border-radius:5px 0 0 5px}
+.b-v{display:flex;flex-direction:column;line-height:1.3;text-align:left;direction:ltr}
+.b-v b{font-size:14px;font-weight:800;direction:rtl;text-align:left}
+.b-v small{font-size:11px;color:var(--ink-3);direction:rtl;text-align:left;white-space:nowrap}
+.empty{color:var(--ink-3);font-size:13.5px;padding:10px 4px}
+.share{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.sh-t{font-size:12.5px;color:var(--ink-2);margin:0 0 8px}
+.sh-bar{display:flex;height:14px;border-radius:7px;overflow:hidden;gap:2px}
+.sh-bar span{display:block;height:100%}
+.sh-k{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink-2)}
+.sh-k i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-left:5px;vertical-align:-1px}
+.c0{background:#2457d6}.c1{background:#0e9f8a}.c2{background:#e39b22}.c3{background:#8a5cd6}.c4{background:#d2453b}.c5{background:#5f7a96}
+.heat{margin-top:18px}
+.hk{display:inline-flex!important;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--ink-3)}
+.hk b{display:inline-block;width:90px;height:8px;border-radius:4px;background:linear-gradient(to left,var(--done),var(--card-2))}
+.hk i{display:none}
+.heat-scroll{overflow-x:auto}
+.hm{width:100%;border-collapse:separate;border-spacing:4px;font-size:13px;min-width:640px}
+.hm th{font-weight:700;color:var(--ink-2);font-size:12.5px;padding:2px 6px;text-align:center;white-space:nowrap}
+.hm thead th.on{color:var(--blue)}
+.hm tbody th{text-align:right;color:var(--ink);font-weight:600}
+.hm tr.on th{color:var(--blue)}
+.hm td{padding:0;text-align:center}
+.hm td.na{background:repeating-linear-gradient(45deg,transparent 0 5px,var(--line) 5px 6px);border-radius:6px}
+.hc{width:100%;font:inherit;border:0;border-radius:6px;padding:6px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;line-height:1.35;color:var(--ink);
+  background:color-mix(in srgb,var(--done) var(--p),var(--card-2))}
+.hc.dark{color:#fff}
+.hc.dim{opacity:.35}
+.hc b{font-size:13.5px;font-weight:800}
+.hc small{font-size:10.5px;opacity:.8}
+.hm td.tot{background:var(--card-2);border-radius:6px;display:table-cell;padding:6px 4px;line-height:1.35}
+.hm td.tot b{display:block;font-weight:800}
+.hm td.tot small{font-size:10.5px;color:var(--ink-3)}
+@media (max-width:1020px){
+  .kpis{grid-template-columns:1fr 1fr;row-gap:16px}
+  .kpi{border-left:0;padding:0}
+  .charts{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .dash{padding:20px 14px 16px;margin-top:26px}
+  .dash-h{flex-direction:column}
+  .fg{flex-direction:column;gap:6px}
+  .fl{flex-basis:auto;padding:0}
+  .m100{grid-template-columns:repeat(50,1fr)}
+  .m100 .sg{height:12px}
+  .bar{grid-template-columns:96px minmax(0,1fr) 78px;gap:8px}
+  .b-n{font-size:12.5px}
+  .b-v small{display:none}
+  .chart{padding:12px 10px}
+  .chart figcaption{flex-direction:column;align-items:flex-start}
+}
+.reset[hidden]{display:none}
+.hm tbody th{width:150px}
+.hm td{min-width:64px}
+.dash,.charts,.chart,.bars,.heat-scroll{min-width:0;max-width:100%}
+.links{min-width:0}
+.bar-in{width:100%;min-width:0;overflow:hidden}.bar{width:100%;overflow:hidden}
 </style>
 </head>
 <body>
@@ -406,7 +507,7 @@ p{margin:0}
 <nav class="bar" aria-label="بخش‌های صفحه">
   <div class="bar-in">
     <a class="brand" href="#top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><span>اکشن‌پلن آپدیت دستگاه‌ها</span></a>
-    <div class="links"><a href="#route">مسیر هدف</a><a href="#timeline">زمان‌بندی</a><a href="#psp">PSPها</a><a href="#work">برنامه اجرایی</a><a href="#track">پیگیری</a><a href="#kpi">شاخص‌ها</a><a href="#risks">ریسک‌ها</a><a href="#actions">اقدامات</a></div>
+    <div class="links"><a href="#dash">داشبورد</a><a href="#route">به‌پرداخت</a><a href="#timeline">زمان‌بندی</a><a href="#psp">PSPها</a><a href="#work">برنامه اجرایی</a><a href="#track">پیگیری</a><a href="#kpi">شاخص‌ها</a><a href="#risks">ریسک‌ها</a><a href="#actions">اقدامات</a></div>
     <span class="upd"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>به‌روزرسانی ۶ آبان ۱۴۰۵</span>
   </div>
 </nav>
@@ -429,41 +530,61 @@ p{margin:0}
       </aside>
     </div>
 
-    <div class="target">
-      <div class="tg-nums">
-        <div class="tg tg-main">
-          <span class="tg-l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>هدف آپدیت (کل دستگاه‌ها)</span>
-          <b class="tg-n">۴۲۵٬۰۰۰</b>
-        </div>
-        <div class="tg tg-done">
-          <span class="tg-l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg>آپدیت‌شده</span>
-          <b class="tg-n">۱۰۰٬۰۰۰</b>
-        </div>
-        <div class="tg">
-          <span class="tg-l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.3-4.5M4 13a8 8 0 0 0 14.3 4.5"/><path d="M5.5 3v4h4M18.5 21v-4h-4"/></svg>باقی‌مانده</span>
-          <b class="tg-n">۳۲۵٬۰۰۰</b>
-        </div>
-        <div class="tg tg-pct">
-          <span class="tg-l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>پیشرفت تا امروز</span>
-          <b class="tg-n">۲۳٫۵٪</b>
+    <div class="dash" id="dash" aria-labelledby="dash-t">
+      <div class="dash-h">
+        <div><h2 id="dash-t">پیشرفت آپدیت به تفکیک PSP و مدل دستگاه</h2>
+        <p>دستگاه‌های آنلاین و آپدیت‌های اجراشده، ۶ آبان ۱۴۰۵ · روی هر PSP، مدل یا خانه جدول بزنید تا همه نمودارها فیلتر شوند</p></div>
+        <button type="button" class="reset" id="dReset" hidden><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.3-4.5M4 13a8 8 0 0 0 14.3 4.5"/><path d="M5.5 3v4h4M18.5 21v-4h-4"/></svg>نمایش همه</button>
+      </div>
+      <div class="filters">
+        <div class="fg"><span class="fl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.2a3.5 3.5 0 0 1 0 6.6M18 14.4a6.5 6.5 0 0 1 3.5 5.6"/></svg>PSP</span><div class="chips" id="fPsp" role="group" aria-label="فیلتر PSP"></div></div>
+        <div class="fg"><span class="fl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>مدل دستگاه</span><div class="chips" id="fModel" role="group" aria-label="فیلتر مدل دستگاه"></div></div>
+      </div>
+      <p class="scope" id="dScope" aria-live="polite"></p>
+      <div class="kpis">
+        <div class="kpi"><span class="tg-l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>هدف آپدیت (دستگاه‌های آنلاین)</span><b class="tg-n" id="kTotal">–</b></div>
+        <div class="kpi done"><span class="tg-l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg>آپدیت اجراشده</span><b class="tg-n" id="kDone">–</b></div>
+        <div class="kpi"><span class="tg-l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.3-4.5M4 13a8 8 0 0 0 14.3 4.5"/><path d="M5.5 3v4h4M18.5 21v-4h-4"/></svg>باقی‌مانده</span><b class="tg-n" id="kLeft">–</b></div>
+        <div class="kpi pct">
+          <svg viewBox="0 0 64 64" class="mini-ring" aria-hidden="true"><circle cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="26" id="kRing" pathLength="100" stroke-dasharray="0 100"/></svg>
+          <div><span class="tg-l"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>پیشرفت</span><b class="tg-n" id="kPct">–</b></div>
         </div>
       </div>
-      <div class="meter" role="img" aria-label="از ۴۲۵٬۰۰۰ دستگاه، ۱۰۰٬۰۰۰ آپدیت شده، ۶۰٬۰۰۰ منتظر APN، ۴۵٬۰۰۰ در انبار و ۲۲۰٬۰۰۰ ناموفق"><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg done"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg apn"></i><i class="sg ware"></i><i class="sg ware"></i><i class="sg ware"></i><i class="sg ware"></i><i class="sg ware"></i><i class="sg ware"></i><i class="sg ware"></i><i class="sg ware"></i><i class="sg ware"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i><i class="sg fail"></i></div>
-      <ul class="meter-key">
-        <li><i class="sw done"></i>آپدیت‌شده ۱۰۰٬۰۰۰</li>
-        <li><i class="sw apn"></i>منتظر بازشدن APN ۶۰٬۰۰۰</li>
-        <li><i class="sw ware"></i>انبار یا بدون تراکنش ۴۵٬۰۰۰</li>
-        <li><i class="sw fail"></i>ناموفق در اتصال و به‌روزرسانی ۲۲۰٬۰۰۰</li>
-        <li class="unit">هر خانه ۵٬۰۰۰ دستگاه · منبع: گزارش مبنای به‌پرداخت ملت، ۶ آبان ۱۴۰۵</li>
-      </ul>
+      <div class="meter m100" id="dMeter" role="img" aria-label=""></div>
+      <ul class="meter-key"><li><i class="sw done"></i>آپدیت اجراشده</li><li><i class="sw left"></i>باقی‌مانده</li><li class="unit">هر خانه یک درصد از دستگاه‌های انتخاب‌شده</li></ul>
+
+      <div class="charts">
+        <figure class="chart">
+          <figcaption><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4M4 20h16"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>پیشرفت هر PSP</span>
+            <label class="sort">مرتب‌سازی
+              <select id="dSort">
+                <option value="total">بیشترین دستگاه</option>
+                <option value="left">بیشترین باقی‌مانده</option>
+                <option value="pctAsc">کمترین پیشرفت</option>
+                <option value="pctDesc">بیشترین پیشرفت</option>
+              </select></label></figcaption>
+          <div class="bars" id="cPsp"></div>
+        </figure>
+        <figure class="chart">
+          <figcaption><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>پیشرفت هر مدل دستگاه</span></figcaption>
+          <div class="bars" id="cModel"></div>
+          <div class="share" id="cShare"></div>
+        </figure>
+      </div>
+      <figure class="chart heat">
+        <figcaption><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>درصد آپدیت؛ PSP در برابر مدل دستگاه</span><span class="hk"><i></i>۰٪<b></b>۱۰۰٪</span></figcaption>
+        <div class="heat-scroll"><table class="hm" id="cHeat"></table></div>
+      </figure>
+      <script type="application/json" id="dData">[["پرداخت نوین", "D300", 23536, 15608], ["پرداخت نوین", "D600", 7918, 5983], ["پرداخت نوین", "M500", 29172, 14443], ["پرداخت نوین", "P10", 509, 311], ["پرداخت نوین", "P3", 35347, 13131], ["پرداخت الکترونیک سپهر", "D300", 37234, 31149], ["پرداخت الکترونیک سپهر", "M500", 32743, 24016], ["پرداخت الکترونیک سپهر", "P10", 858, 423], ["پرداخت الکترونیک سپهر", "P3", 129943, 78520], ["پرداخت الکترونیک سپهر", "P8", 4696, 1769], ["ارتباط فردا", "P10", 7519, 1511], ["رفاه پردیس", "M500", 17307, 11863], ["رفاه پردیس", "P3", 42905, 38627], ["مانی تک", "D300", 2092, 1123], ["مانی تک", "D600", 9368, 6730], ["مانی تک", "P10", 7600, 1216], ["آسان پرداخت پرشین", "P3", 5080, 2433], ["سداد", "D300", 61875, 25918], ["سداد", "P10", 2311, 1068], ["سداد", "P3", 626, 273], ["فناوا", "D300", 13224, 7206], ["فناوا", "M500", 1, 0], ["فناوا", "P3", 3804, 383], ["به‌پرداخت ملت", "D300", 334322, 140398], ["به‌پرداخت ملت", "M500", 65234, 15266], ["به‌پرداخت ملت", "P10", 18413, 12083], ["پارسیان", "P3", 664, 113]]</script>
     </div>
+
   </div>
 </header>
 <main id="main">
 
 <section class="sec" id="route" aria-labelledby="route-t">
-  <div class="sec-h"><span class="sec-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span><div><h2 id="route-t">مسیر رسیدن به هدف</h2>
-  <p class="sec-sub">هر گروه از دستگاه‌ها مسیر آپدیت خودش را دارد</p></div></div>
+  <div class="sec-h"><span class="sec-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span><div><h2 id="route-t">به‌پرداخت ملت: مسیر رسیدن به هدف</h2>
+  <p class="sec-sub">بر اساس گزارش مبنای به‌پرداخت ملت؛ هر گروه از دستگاه‌ها مسیر آپدیت خودش را دارد</p></div></div>
   <div class="route-grid">
     <figure class="donut-wrap"><svg viewBox="0 0 200 200" class="donut" role="img" aria-label="ترکیب ۴۲۵٬۰۰۰ دستگاه هدف"><circle cx="100" cy="100" r="78" class="dn-bg"/><circle class="dn done" cx="100" cy="100" r="78" pathLength="100" stroke-dasharray="22.93 77.07" stroke-dashoffset="25.00"/><circle class="dn fail" cx="100" cy="100" r="78" pathLength="100" stroke-dasharray="51.16 48.84" stroke-dashoffset="1.47"/><circle class="dn apn" cx="100" cy="100" r="78" pathLength="100" stroke-dasharray="13.52 86.48" stroke-dashoffset="-50.29"/><circle class="dn ware" cx="100" cy="100" r="78" pathLength="100" stroke-dasharray="9.99 90.01" stroke-dashoffset="-64.41"/><text x="100" y="96" class="dn-n">۴۲۵٬۰۰۰</text><text x="100" y="122" class="dn-l">دستگاه هدف</text></svg></figure>
     <ul class="routes"><li class="rt done"><span class="rt-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg></span><div class="rt-b"><div class="rt-h"><b>آپدیت‌شده</b><span class="rt-n"><small>۲۳٫۵٪</small>۱۰۰٬۰۰۰</span></div><div class="rt-bar"><i style="width:23.53%"></i></div><p>از طریق تک‌استور انجام شده است.</p></div></li><li class="rt fail"><span class="rt-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3l6.7-6.7a4 4 0 0 0-2-2z"/><path d="M5 19l3-3"/></svg></span><div class="rt-b"><div class="rt-h"><b>ناموفق در اتصال و به‌روزرسانی</b><span class="rt-n"><small>۵۱٫۸٪</small>۲۲۰٬۰۰۰</span></div><div class="rt-bar"><i style="width:51.76%"></i></div><p>علت‌یابی و تعیین مسیر هر گروه. حدود ۱۸۰٬۰۰۰ دستگاه نیازمند آپدیت حضوری است؛ برنامه اجرایی آن را به‌پرداخت ملت تا ۹ آبان اعلام می‌کند.</p></div></li><li class="rt apn"><span class="rt-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"/><circle cx="12" cy="11" r="2"/><path d="M8.5 7.5a5 5 0 0 0 0 7M15.5 7.5a5 5 0 0 1 0 7M5.6 4.6a9 9 0 0 0 0 12.8M18.4 4.6a9 9 0 0 1 0 12.8"/></svg></span><div class="rt-b"><div class="rt-h"><b>منتظر بازشدن APN</b><span class="rt-n"><small>۱۴٫۱٪</small>۶۰٬۰۰۰</span></div><div class="rt-bar"><i style="width:14.12%"></i></div><p>پیگیری مجدد بازشدن APN در شنبه ۹ آبان؛ امکان‌سنجی نرخ آپدیت از طریق APN تا ۱۰ آبان.</p></div></li><li class="rt ware"><span class="rt-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"/></svg></span><div class="rt-b"><div class="rt-h"><b>انبار یا بدون تراکنش</b><span class="rt-n"><small>۱۰٫۶٪</small>۴۵٬۰۰۰</span></div><div class="rt-bar"><i style="width:10.59%"></i></div><p>آپدیت در خود انبار؛ ۳۱٬۰۰۰ دستگاه توسط توسن تکنو تا ۱۳ آبان.</p></div></li></ul>
@@ -557,6 +678,115 @@ p{margin:0}
 </main>
 <footer class="ft"><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><span>معاونت نرم‌افزار</span></div><p>نسخه ایستای اکشن‌پلن، ۶ آبان ۱۴۰۵. برای نسخه تازه، این فایل جایگزین می‌شود.</p></footer>
 <script>
+(function(){
+  var el=function(id){return document.getElementById(id);};
+  var DATA=JSON.parse(el('dData').textContent).map(function(r){return {psp:r[0],model:r[1],total:r[2],done:r[3]};});
+  var FA='۰۱۲۳۴۵۶۷۸۹';
+  function fa(s){return String(s).replace(/[0-9]/g,function(d){return FA[d];});}
+  function num(n){return fa(Math.round(n).toLocaleString('en-US')).replace(/,/g,'٬');}
+  function pct(d,t,dec){if(!t)return '–';var v=d/t*100;return fa(v.toFixed(dec==null?1:dec)).replace('.','٫')+'٪';}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  var PSPS=[],MODELS=[];
+  DATA.forEach(function(r){if(PSPS.indexOf(r.psp)<0)PSPS.push(r.psp);if(MODELS.indexOf(r.model)<0)MODELS.push(r.model);});
+  MODELS.sort();
+  var selP=[],selM=[],sortBy='total';
+
+  function match(r,ignoreP,ignoreM){
+    return (ignoreP||!selP.length||selP.indexOf(r.psp)>=0)&&(ignoreM||!selM.length||selM.indexOf(r.model)>=0);
+  }
+  function agg(key,ignoreP,ignoreM){
+    var m={};
+    DATA.forEach(function(r){if(!match(r,ignoreP,ignoreM))return;
+      var k=r[key];m[k]=m[k]||{name:k,total:0,done:0};m[k].total+=r.total;m[k].done+=r.done;});
+    return Object.keys(m).map(function(k){return m[k];});
+  }
+  function toggle(arr,v){var i=arr.indexOf(v);if(i<0)arr.push(v);else arr.splice(i,1);}
+
+  function chips(){
+    el('fPsp').innerHTML='<button type="button" class="chip'+(selP.length?'':' on')+'" data-p="">همه</button>'+
+      PSPS.map(function(p){return '<button type="button" class="chip'+(selP.indexOf(p)>=0?' on':'')+'" data-p="'+esc(p)+'" aria-pressed="'+(selP.indexOf(p)>=0)+'">'+esc(p)+'</button>';}).join('');
+    el('fModel').innerHTML='<button type="button" class="chip'+(selM.length?'':' on')+'" data-m="">همه</button>'+
+      MODELS.map(function(m){return '<button type="button" class="chip'+(selM.indexOf(m)>=0?' on':'')+'" data-m="'+esc(m)+'" aria-pressed="'+(selM.indexOf(m)>=0)+'">'+esc(m)+'</button>';}).join('');
+  }
+
+  function bars(list,kind,sel){
+    var max=Math.max.apply(null,list.map(function(x){return x.total;}).concat([1]));
+    if(!list.length)return '<p class="empty">برای این انتخاب داده‌ای نیست. یک فیلتر را بردارید.</p>';
+    return list.map(function(x){
+      var w=x.total/max*100, d=x.total?x.done/x.total*100:0, on=sel.indexOf(x.name)>=0, dim=sel.length&&!on;
+      return '<button type="button" class="bar'+(on?' on':'')+(dim?' dim':'')+'" data-'+kind+'="'+esc(x.name)+'" aria-pressed="'+on+'" '+
+        'title="'+esc(x.name)+': '+num(x.done)+' از '+num(x.total)+'">'+
+        '<span class="b-n">'+esc(x.name)+'</span>'+
+        '<span class="b-track"><span class="b-tot" style="width:'+w.toFixed(2)+'%"><span class="b-done" style="width:'+d.toFixed(2)+'%"></span></span></span>'+
+        '<span class="b-v"><b>'+pct(x.done,x.total,0)+'</b><small>'+num(x.done)+' از '+num(x.total)+'</small></span></button>';
+    }).join('');
+  }
+
+  function render(){
+    chips();
+    var rows=DATA.filter(function(r){return match(r);});
+    var T=0,D=0;rows.forEach(function(r){T+=r.total;D+=r.done;});
+    el('kTotal').textContent=num(T);el('kDone').textContent=num(D);el('kLeft').textContent=num(T-D);el('kPct').textContent=pct(D,T);
+    var p=T?D/T*100:0;
+    el('kRing').setAttribute('stroke-dasharray',p.toFixed(1)+' 100');
+    var cells=Math.round(p),h='';for(var i=0;i<100;i++)h+='<i class="sg '+(i<cells?'done':'left')+'"></i>';
+    el('dMeter').innerHTML=h;el('dMeter').setAttribute('aria-label',pct(D,T)+' از '+num(T)+' دستگاه آپدیت شده است');
+
+    var scope=(selP.length?selP.join('، '):'همه PSPها')+' / '+(selM.length?selM.join('، '):'همه مدل‌ها');
+    el('dScope').textContent='نمایش: '+scope;
+    el('dReset').hidden=!(selP.length||selM.length);
+
+    var ps=agg('psp',true,false);
+    ps.sort(function(a,b){
+      if(sortBy==='left')return (b.total-b.done)-(a.total-a.done);
+      if(sortBy==='pctAsc')return a.done/a.total-b.done/b.total;
+      if(sortBy==='pctDesc')return b.done/b.total-a.done/a.total;
+      return b.total-a.total;});
+    el('cPsp').innerHTML=bars(ps,'p',selP);
+    var ms=agg('model',false,true).sort(function(a,b){return b.total-a.total;});
+    el('cModel').innerHTML=bars(ms,'m',selM);
+
+    // share of the remaining devices by model: where the work is
+    var left=ms.map(function(x){return {n:x.name,v:x.total-x.done};}).filter(function(x){return x.v>0;});
+    var L=left.reduce(function(s,x){return s+x.v;},0);
+    el('cShare').innerHTML=L?'<p class="sh-t">سهم هر مدل از '+num(L)+' دستگاه باقی‌مانده</p><div class="sh-bar">'+
+      left.map(function(x,i){return '<span class="c'+(i%6)+'" style="width:'+(x.v/L*100).toFixed(2)+'%" title="'+esc(x.n)+': '+num(x.v)+'"></span>';}).join('')+
+      '</div><ul class="sh-k">'+left.map(function(x,i){return '<li><i class="c'+(i%6)+'"></i>'+esc(x.n)+' <b>'+pct(x.v,L,0)+'</b></li>';}).join('')+'</ul>':'';
+
+    // heatmap: psp x model
+    var pl=agg('psp',true,true).sort(function(a,b){return b.total-a.total;}).map(function(x){return x.name;});
+    var head='<thead><tr><th scope="col">PSP</th>'+MODELS.map(function(m){return '<th scope="col" class="'+(selM.indexOf(m)>=0?'on':'')+'">'+esc(m)+'</th>';}).join('')+'<th scope="col">کل</th></tr></thead>';
+    var body=pl.map(function(pn){
+      var rt=0,rd=0;
+      var tds=MODELS.map(function(m){
+        var r=DATA.filter(function(x){return x.psp===pn&&x.model===m;})[0];
+        if(!r)return '<td class="na"></td>';
+        rt+=r.total;rd+=r.done;
+        var v=r.total?r.done/r.total*100:0, on=match(r), lvl=Math.round(v);
+        return '<td><button type="button" class="hc'+(on?'':' dim')+(v>=55?' dark':'')+'" style="--p:'+lvl+'%" data-cell="'+esc(pn)+'|'+esc(m)+'" '+
+          'title="'+esc(pn)+' / '+esc(m)+': '+num(r.done)+' از '+num(r.total)+'"><b>'+pct(r.done,r.total,0)+'</b><small>'+num(r.total)+'</small></button></td>';
+      }).join('');
+      return '<tr class="'+(selP.indexOf(pn)>=0?'on':'')+'"><th scope="row">'+esc(pn)+'</th>'+tds+'<td class="tot"><b>'+pct(rd,rt,0)+'</b><small>'+num(rt)+'</small></td></tr>';
+    }).join('');
+    el('cHeat').innerHTML=head+'<tbody>'+body+'</tbody>';
+  }
+
+  document.getElementById('dash').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    if(b.id==='dReset'){selP=[];selM=[];}
+    else if(b.hasAttribute('data-p')){var p=b.getAttribute('data-p');if(!p)selP=[];else toggle(selP,p);}
+    else if(b.hasAttribute('data-m')){var m=b.getAttribute('data-m');if(!m)selM=[];else toggle(selM,m);}
+    else if(b.hasAttribute('data-cell')){var c=b.getAttribute('data-cell').split('|');
+      var same=selP.length===1&&selP[0]===c[0]&&selM.length===1&&selM[0]===c[1];
+      selP=same?[]:[c[0]];selM=same?[]:[c[1]];}
+    else return;
+    render();
+  });
+  el('dSort').addEventListener('change',function(){sortBy=this.value;render();});
+  render();
+})();
+
 (function(){
   var FA='۰۱۲۳۴۵۶۷۸۹';function fa(n){return String(n).replace(/[0-9]/g,function(d){return FA[d];});}
   var start=Date.UTC(2026,9,28), total=22;
