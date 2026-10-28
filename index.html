@@ -436,10 +436,10 @@ p{margin:0}
 .sort{font-size:12.5px;font-weight:500;color:var(--ink-3);display:flex;align-items:center;gap:6px}
 .sort select{font:inherit;font-size:12.5px;color:var(--ink);background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:3px 8px}
 .bars{display:grid;gap:4px}
-.bar{display:grid;grid-template-columns:150px minmax(0,1fr) 112px;gap:12px;align-items:center;width:100%;font:inherit;text-align:right;background:none;border:0;border-radius:8px;padding:5px 6px;cursor:pointer;color:var(--ink)}
-.bar:hover{background:var(--card-2)}
-.bar.on{background:var(--blue-soft)}
-.bar.dim{opacity:.42}
+.hbar{display:grid;grid-template-columns:150px minmax(0,1fr) 112px;gap:12px;align-items:center;width:100%;font:inherit;text-align:right;background:none;border:0;border-radius:8px;padding:5px 6px;cursor:pointer;color:var(--ink)}
+.hbar:hover{background:var(--card-2)}
+.hbar.on{background:var(--blue-soft)}
+.hbar.dim{opacity:.42}
 .b-n{font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .b-track{height:18px;display:block}
 .b-tot{display:block;height:100%;background:var(--card-2);box-shadow:inset 0 0 0 1px var(--line);border-radius:5px;overflow:hidden;min-width:3px}
@@ -488,7 +488,7 @@ p{margin:0}
   .fl{flex-basis:auto;padding:0}
   .m100{grid-template-columns:repeat(50,1fr)}
   .m100 .sg{height:12px}
-  .bar{grid-template-columns:96px minmax(0,1fr) 78px;gap:8px}
+  .hbar{grid-template-columns:96px minmax(0,1fr) 78px;gap:8px}
   .b-n{font-size:12.5px}
   .b-v small{display:none}
   .chart{padding:12px 10px}
@@ -499,7 +499,7 @@ p{margin:0}
 .hm td{min-width:64px}
 .dash,.charts,.chart,.bars,.heat-scroll{min-width:0;max-width:100%}
 .links{min-width:0}
-.bar-in{width:100%;min-width:0;overflow:hidden}.bar{width:100%;overflow:hidden}
+.bar-in{width:100%;min-width:0;overflow:hidden}.bar{width:100%;overflow:hidden;display:block}
 .lg{width:22px;height:22px;border-radius:6px;object-fit:contain;background:#fff;box-shadow:0 0 0 1px var(--line);flex:0 0 22px}
 .chip{display:inline-flex;align-items:center;gap:7px}
 .chip .lg{width:20px;height:20px;flex-basis:20px;margin-inline-start:-6px}
@@ -507,8 +507,8 @@ p{margin:0}
 .b-n{display:flex;align-items:center;gap:8px;min-width:0}
 .b-n > span{overflow:hidden;text-overflow:ellipsis}
 .rh-n{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
-.bar{grid-template-columns:178px minmax(0,1fr) 112px}
-@media (max-width:760px){.bar{grid-template-columns:116px minmax(0,1fr) 70px}.b-n .lg{width:18px;height:18px;flex-basis:18px}}
+.hbar{grid-template-columns:178px minmax(0,1fr) 112px}
+@media (max-width:760px){.hbar{grid-template-columns:116px minmax(0,1fr) 70px}.b-n .lg{width:18px;height:18px;flex-basis:18px}}
 .stamp{display:inline-flex;align-items:center;gap:5px;font-weight:700;color:var(--ink)}
 .stamp .ic{color:var(--done)}
 .dv{width:28px;height:28px;border-radius:7px;object-fit:cover;flex:0 0 28px;box-shadow:0 0 0 1px var(--line)}
@@ -518,6 +518,12 @@ p{margin:0}
 .hm-dv .dv{width:36px;height:36px;flex-basis:36px;border-radius:9px}
 .note.new{background:var(--done-soft)}
 .note.new .ic{color:var(--done)}
+.hero-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:0 0 14px}
+.hero-tags .kicker{margin:0}
+.updated{display:inline-flex;align-items:center;gap:8px;margin:0;font-size:13.5px;color:#dbe5f2;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:4px 14px 4px 12px;border-radius:999px}
+.updated .ic{color:#2fd0b4}
+.updated b{color:#fff;font-weight:800}
+.upd{display:none}
 </style>
 </head>
 <body>
@@ -526,7 +532,7 @@ p{margin:0}
   <div class="bar-in">
     <a class="brand" href="#top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><span>اکشن‌پلن آپدیت دستگاه‌ها</span></a>
     <div class="links"><a href="#dash">داشبورد</a><a href="#route">به‌پرداخت</a><a href="#timeline">زمان‌بندی</a><a href="#psp">PSPها</a><a href="#work">برنامه اجرایی</a><a href="#track">پیگیری</a><a href="#kpi">شاخص‌ها</a><a href="#risks">ریسک‌ها</a><a href="#actions">اقدامات</a></div>
-    <span class="upd"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>به‌روزرسانی ۷ آبان ۱۴۰۵، ساعت ۰۲:۵۶</span>
+    <span class="upd"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>به‌روزرسانی ۷ آبان ۱۴۰۵، ساعت ۰۳:۰۲</span>
   </div>
 </nav>
 
@@ -534,7 +540,8 @@ p{margin:0}
   <div class="hero-in">
     <div class="hero-head">
       <div class="hero-title">
-        <p class="kicker"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><span>برنامه ارتقای نسخه FW کارتخوان‌ها، فاز سوم</span></p>
+        <div class="hero-tags"><p class="kicker"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><span>برنامه ارتقای نسخه FW کارتخوان‌ها، فاز سوم</span></p>
+        <p class="updated"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>آخرین به‌روزرسانی صفحه: <b>۷ آبان ۱۴۰۵، ساعت ۰۳:۰۲</b></span></p></div>
         <h1>آپدیت دستگاه‌های باقی‌مانده در میدان PSPها</h1>
         <p class="lead">هدف فاز سوم این است که هر PSP یک برنامه زمان‌بندی تعهدشده برای آپدیت دستگاه‌های باقی‌مانده خود ارائه کند و اجرای آن روزانه و بر اساس داده سیستمی پایش شود؛ کل فرآیند سه هفته است (۶ تا ۲۷ آبان ۱۴۰۵)، تا پوشش آپدیت در میدان به حداکثر برسد.</p>
       </div>
@@ -735,7 +742,7 @@ p{margin:0}
     if(!list.length)return '<p class="empty">برای این انتخاب داده‌ای نیست. یک فیلتر را بردارید.</p>';
     return list.map(function(x){
       var w=x.total/max*100, d=x.total?x.done/x.total*100:0, on=sel.indexOf(x.name)>=0, dim=sel.length&&!on;
-      return '<button type="button" class="bar'+(on?' on':'')+(dim?' dim':'')+'" data-'+kind+'="'+esc(x.name)+'" aria-pressed="'+on+'" '+
+      return '<button type="button" class="hbar'+(on?' on':'')+(dim?' dim':'')+'" data-'+kind+'="'+esc(x.name)+'" aria-pressed="'+on+'" '+
         'title="'+esc(x.name)+': '+num(x.done)+' از '+num(x.total)+'">'+
         '<span class="b-n">'+(kind==='p'?lg(x.name):dv(x.name))+'<span>'+esc(x.name)+'</span></span>'+
         '<span class="b-track"><span class="b-tot" style="width:'+w.toFixed(2)+'%"><span class="b-done" style="width:'+d.toFixed(2)+'%"></span></span></span>'+
