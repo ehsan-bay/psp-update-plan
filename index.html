@@ -552,6 +552,65 @@ p{margin:0}
 .mn .vers-wrap{margin:14px}
 .mn[open]{padding-bottom:14px}
 @media (max-width:760px){.mn .ws-m{display:none}.mn .decs{padding:0 10px}}
+
+/* ===== causes of non-update ===== */
+.causes{margin-top:22px;border:1px solid color-mix(in srgb,var(--fail) 30%,var(--line));border-radius:var(--r-md);padding:20px;background:linear-gradient(180deg,var(--fail-soft),var(--card) 140px)}
+.cz-h{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+.cz-ic{flex:0 0 40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--card);color:var(--fail);box-shadow:0 0 0 1px var(--line)}
+.cz-ic .ic{width:21px;height:21px}
+.cz-h h3{font-size:18px;font-weight:800}
+.cz-h p{font-size:13.5px;color:var(--ink-2);margin-top:2px}
+.cz-h p b{color:var(--done)}
+.cz-bar{display:flex;height:30px;border-radius:8px;overflow:hidden;gap:2px;direction:rtl}
+.cb-s{display:block;height:100%}
+.cb-s.done{background:var(--done)}
+.cb-s.d300{background:#8a5cd6}
+.cb-s.apn{background:var(--apn)}
+.cb-s.never{background:var(--fail)}
+.cb-s.rest{background:var(--card-2);box-shadow:inset 0 0 0 1px var(--line)}
+.cz-ideal{position:relative;height:30px;margin-top:2px}
+.cz-ideal::before{content:"";position:absolute;right:var(--ideal);top:-34px;height:40px;border-left:2px dashed var(--ink)}
+.cz-ideal span{position:absolute;right:calc(var(--ideal) - 260px);width:250px;top:6px;font-size:12px;font-weight:700;color:var(--ink);text-align:left}
+.cz-cards{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.czc{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:14px;border-top:4px solid var(--c)}
+.czc.d300{--c:#8a5cd6}.czc.apn{--c:var(--apn)}.czc.never{--c:var(--fail)}
+.czc-ic{flex:0 0 38px;height:38px;border-radius:10px;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.czc-n{display:block;font-size:24px;font-weight:900;line-height:1.3;color:var(--ink)}
+.czc-l{display:block;font-size:13px;color:var(--ink-2)}
+.czc-a{display:flex;gap:6px;align-items:flex-start;margin-top:8px;font-size:12.5px;color:var(--ink-2);line-height:1.7}
+.czc-a .ic{color:var(--done);margin-top:3px}
+.czc.d300 .czc-a .ic{color:var(--ink-3)}
+.cz-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin-top:16px}
+.cz-col{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:16px}
+.cz-col h4{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-size:15px;font-weight:800}
+.cz-col h4 .ic{color:var(--blue)}
+.cz-col h4.mt{margin-top:18px}
+.tcs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.tc{display:flex;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px}
+.tc-no{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;font-size:13px}
+.tc-b{flex:1;min-width:0}
+.tc-h{display:flex;align-items:center;gap:7px}
+.tc-h .ic{color:var(--fail)}
+.tc-h b{font-size:14.5px}
+.tc-p{font-size:13.5px;color:var(--ink-2);margin-top:3px}
+.tc-a{display:flex;gap:6px;align-items:flex-start;margin-top:8px;padding:8px 10px;border-radius:8px;background:var(--done-soft);font-size:13px;color:var(--ink)}
+.tc-a .ic{color:var(--done);margin-top:4px}
+.nv{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.nv li{display:grid;grid-template-columns:150px minmax(0,1fr) 64px;gap:10px;align-items:center;font-size:13px}
+.nv-n{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nv-t{height:12px;background:var(--card-2);border-radius:6px;overflow:hidden}
+.nv-t i{display:block;height:100%;background:var(--fail);border-radius:6px}
+.nv b{text-align:left;font-variant-numeric:tabular-nums}
+.slow{margin:0;padding-right:20px;font-size:13.5px;color:var(--ink-2)}
+.slow li{margin:4px 0}
+@media (max-width:1020px){.cz-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){
+  .causes{padding:14px 12px}
+  .cz-cards{grid-template-columns:minmax(0,1fr)}
+  .nv li{grid-template-columns:100px minmax(0,1fr) 54px}
+  .cz-ideal span{right:auto;left:0;width:auto;top:4px}
+}
+.cz-key{margin:0 0 14px}
 </style>
 </head>
 <body>
@@ -560,7 +619,7 @@ p{margin:0}
   <div class="bar-in">
     <a class="brand" href="#top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><span>اکشن‌پلن آپدیت دستگاه‌ها</span></a>
     <div class="links"><a href="#dash">داشبورد</a><a href="#route">به‌پرداخت</a><a href="#timeline">زمان‌بندی</a><a href="#psp">PSPها</a><a href="#work">برنامه اجرایی</a><a href="#track">پیگیری</a><a href="#kpi">شاخص‌ها</a><a href="#risks">ریسک‌ها</a><a href="#actions">اقدامات</a></div>
-    <span class="upd"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>به‌روزرسانی ۱۳ آبان ۱۴۰۵، ساعت ۱۵:۱۷</span>
+    <span class="upd"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>به‌روزرسانی ۱۹ آبان ۱۴۰۵، ساعت ۲۲:۵۱</span>
   </div>
 </nav>
 
@@ -569,7 +628,7 @@ p{margin:0}
     <div class="hero-head">
       <div class="hero-title">
         <div class="hero-tags"><p class="kicker"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><span>برنامه ارتقای نسخه FW کارتخوان‌ها، فاز سوم</span></p>
-        <p class="updated"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>آخرین به‌روزرسانی صفحه: <b>۱۳ آبان ۱۴۰۵، ساعت ۱۵:۱۷</b></span></p></div>
+        <p class="updated"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>آخرین به‌روزرسانی صفحه: <b>۱۹ آبان ۱۴۰۵، ساعت ۲۲:۵۱</b></span></p></div>
         <h1>آپدیت دستگاه‌های باقی‌مانده در میدان PSPها</h1>
         <p class="lead">هدف فاز سوم این است که هر PSP یک برنامه زمان‌بندی تعهدشده برای آپدیت دستگاه‌های باقی‌مانده خود ارائه کند و اجرای آن روزانه و بر اساس داده سیستمی پایش شود؛ کل فرآیند سه هفته است (۶ تا ۲۷ آبان ۱۴۰۵)، تا پوشش آپدیت در میدان به حداکثر برسد.</p>
       </div>
@@ -605,6 +664,36 @@ p{margin:0}
       </div>
       <div class="meter m100" id="dMeter" role="img" aria-label=""></div>
       <ul class="meter-key"><li><i class="sw done"></i>آپدیت اجراشده</li><li><i class="sw left"></i>باقی‌مانده</li><li class="unit">هر خانه یک درصد از دستگاه‌های انتخاب‌شده</li></ul>
+
+    <div class="causes" id="causes">
+      <div class="cz-h"><span class="cz-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5L21.5 20h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg></span><div><h3>چرا بقیه دستگاه‌ها آپدیت نشده‌اند؟</h3>
+      <p>کل PSPها، بر اساس گزارش آپدیت FW مورخ ۱۹ آبان ۱۴۰۵. با رفع سه مانع اصلی، پیشرفت از ۵۰٫۵٪ به <b>۹۸٫۲٪</b> (۸۷۷٬۹۳۲ دستگاه) می‌رسد.</p></div></div>
+      <div class="cz-bar" role="img" aria-label="از ۸۹۴٬۳۰۱ دستگاه هدف: ۴۵۱٬۵۶۴ آپدیت‌شده، ۲۲۰٬۰۰۰ D300 با مشکل، ۱۲۰٬۰۰۰ دارای APN، ۸۶٬۳۶۸ هرگز متصل‌نشده"><span class="cb-s done" style="width:50.494%" title="آپدیت‌شده: ۴۵۱٬۵۶۴"></span><span class="cb-s d300" style="width:24.600%" title="D300 با مشکل آپدیت OS: ۲۲۰٬۰۰۰"></span><span class="cb-s apn" style="width:13.418%" title="دستگاه‌های دارای APN: ۱۲۰٬۰۰۰"></span><span class="cb-s never" style="width:9.658%" title="هرگز متصل نشده: ۸۶٬۳۶۸"></span><span class="cb-s rest" style="width:1.830%" title="سایر: ۱۶٬۳۶۹"></span></div>
+      <div class="cz-ideal" style="--ideal:98.17%"><span>سقف قابل دستیابی پس از رفع موانع: ۹۸٫۲٪</span></div>
+      <ul class="meter-key cz-key">
+        <li><i class="sw done"></i>آپدیت‌شده ۴۵۱٬۵۶۴</li>
+        <li><i class="sw" style="background:#8a5cd6"></i>D300 با مشکل آپدیت OS ۲۲۰٬۰۰۰</li>
+        <li><i class="sw apn"></i>دارای APN ۱۲۰٬۰۰۰</li>
+        <li><i class="sw" style="background:var(--fail)"></i>هرگز متصل نشده ۸۶٬۳۶۸</li>
+        <li><i class="sw left"></i>سایر ۱۶٬۳۶۹</li>
+      </ul>
+      <ul class="cz-cards">
+        <li class="czc d300"><span class="czc-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg></span><div><b class="czc-n">۲۲۰٬۰۰۰</b><span class="czc-l">دستگاه D300 با مشکل آپدیت OS</span>
+          <p class="czc-a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3l6.7-6.7a4 4 0 0 0-2-2z"/><path d="M5 19l3-3"/></svg>علت‌یابی فنی؛ اقدام اصلاحی هنوز ثبت نشده</p></div></li>
+        <li class="czc apn"><span class="czc-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13v8"/><circle cx="12" cy="11" r="2"/><path d="M8.5 7.5a5 5 0 0 0 0 7M15.5 7.5a5 5 0 0 1 0 7M5.6 4.6a9 9 0 0 0 0 12.8M18.4 4.6a9 9 0 0 1 0 12.8"/></svg></span><div><b class="czc-n">۱۲۰٬۰۰۰</b><span class="czc-l">دستگاه دارای APN</span>
+          <p class="czc-a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg>مذاکره با به‌پرداخت برای بازکردن TechStorecenter برای دستگاه‌های APN</p></div></li>
+        <li class="czc never"><span class="czc-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M8.5 16.5a5 5 0 0 1 7 0M5 12.5a10 10 0 0 1 4.2-2.5M14.8 10a10 10 0 0 1 4.2 2.5M2 8.8a15 15 0 0 1 4.6-2.9M12 5a15 15 0 0 1 10 3.8"/><circle cx="12" cy="20" r="1"/></svg></span><div><b class="czc-n">۸۶٬۳۶۸</b><span class="czc-l">دستگاه که تاکنون هرگز متصل نشده</span>
+          <p class="czc-a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg>مذاکره با همه مشتریان و ارائه ابزار offline نصب سیستم‌عامل</p></div></li>
+      </ul>
+      <div class="cz-grid">
+        <div class="cz-col"><h4><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3l6.7-6.7a4 4 0 0 0-2-2z"/><path d="M5 19l3-3"/></svg>علل فنی و اقدامات اصلاحی</h4><ol class="tcs"><li class="tc"><span class="tc-no">۱</span><div class="tc-b"><div class="tc-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h3l2-6 4 12 2-6h3"/></svg><b>ایجنت‌های نسخه ۱</b></div><p class="tc-p">ایجنت‌های نسخه ۱ از websocket پشتیبانی نمی‌کردند.</p><p class="tc-a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg><span>پشتیبانی websocket برای این ایجنت‌ها دوباره فعال شده تا آپدیت شوند.</span></p></div></li><li class="tc"><span class="tc-no">۲</span><div class="tc-b"><div class="tc-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-45 12 12)"/><path d="M10 10h.01M14 14h.01M12 12h.01"/></svg><b>پچ‌های بدون تارگت</b></div><p class="tc-p">برخی پچ‌ها تارگتی برای آپدیت ندارند.</p><p class="tc-a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg><span>تعریف تارگت برای این پچ‌ها.</span></p></div></li><li class="tc"><span class="tc-no">۳</span><div class="tc-b"><div class="tc-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></svg><b>گیرکردن ایجنت ۲.۱.۶</b></div><p class="tc-p">ایجنت ۲.۱.۶ در وضعیت‌های received و executing گیر می‌کند.</p><p class="tc-a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg><span>جاب‌هایی نوشته شده که این وضعیت‌ها را لغو می‌کند تا دستگاه دوباره آماده دریافت ایجنت جدید و پچ شود.</span></p></div></li><li class="tc"><span class="tc-no">۴</span><div class="tc-b"><div class="tc-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9"/></svg><b>timeout زیاد به‌دلیل کندی شبکه</b></div><p class="tc-p">تعداد بسیار زیادی از نصب‌ها به‌دلیل کندی شبکه timeout می‌شوند.</p><p class="tc-a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/></svg><span>این موارد با جاب‌ها شناسایی و کامندهای نصب دوباره ارسال می‌شوند.</span></p></div></li></ol></div>
+        <div class="cz-col">
+          <h4><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M8.5 16.5a5 5 0 0 1 7 0M5 12.5a10 10 0 0 1 4.2-2.5M14.8 10a10 10 0 0 1 4.2 2.5M2 8.8a15 15 0 0 1 4.6-2.9M12 5a15 15 0 0 1 10 3.8"/><circle cx="12" cy="20" r="1"/></svg>دستگاه‌های هرگز متصل‌نشده به تفکیک PSP</h4><ul class="nv"><li><span class="nv-n">رفاه پردیس</span><span class="nv-t"><i style="width:100.00%"></i></span><b>۵۸٬۵۴۲</b></li><li><span class="nv-n">پرداخت نوین</span><span class="nv-t"><i style="width:12.13%"></i></span><b>۷٬۱۰۱</b></li><li><span class="nv-n">پرداخت الکترونیک سپهر</span><span class="nv-t"><i style="width:9.55%"></i></span><b>۵٬۵۹۳</b></li><li><span class="nv-n">به‌پرداخت ملت</span><span class="nv-t"><i style="width:8.35%"></i></span><b>۴٬۸۸۶</b></li><li><span class="nv-n">فناوا</span><span class="nv-t"><i style="width:5.83%"></i></span><b>۳٬۴۱۳</b></li><li><span class="nv-n">مانی تک</span><span class="nv-t"><i style="width:5.61%"></i></span><b>۳٬۲۸۶</b></li><li><span class="nv-n">ارتباط فردا</span><span class="nv-t"><i style="width:4.19%"></i></span><b>۲٬۴۵۲</b></li><li><span class="nv-n">سداد</span><span class="nv-t"><i style="width:1.27%"></i></span><b>۷۴۵</b></li><li><span class="nv-n">پارسیان</span><span class="nv-t"><i style="width:0.51%"></i></span><b>۲۹۸</b></li><li><span class="nv-n">آسان پرداخت پرشین</span><span class="nv-t"><i style="width:0.09%"></i></span><b>۵۲</b></li></ul>
+          <h4 class="mt"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9"/></svg>علل کندی فرآیند به‌روزرسانی</h4><ul class="slow"><li>حجم بسیار زیاد پچ‌ها</li><li>سرعت پایین پهنای باند دستگاه مشتریان</li><li>قدیمی‌بودن ایجنت‌های نصب‌شده روی دستگاه و عملکرد ضعیف آن‌ها</li><li>سیستم‌عامل‌های بسیار قدیمی</li></ul>
+        </div>
+      </div>
+    </div>
+
 
       <div class="charts">
         <figure class="chart">
